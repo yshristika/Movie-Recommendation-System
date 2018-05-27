@@ -1,0 +1,5 @@
+# Movie-Recommendation-System
+Problem Definition:
+We wanted to build a mobile application backed by a recommendation engine that will be useful to anyone who is looking to find movies similar to the movies they have watched and rated. Applications like Netflix, are backed by recommender systems running on large amounts of data. These services can recommend and stream content that they have access to.
+We wanted to build something that can change recommendations as available data changes. Our app caters to the people who just want to get some recommendations and watch them anywhere they would prefer to
+. In our application, we have a large collection of movies from all popular genres and several popular languages. In our system, the important difference is that we don't provide the user with a link to watch the movie but we direct them to the official IMDB page of the movie. Here the user can get to know the complete details of the top 5 recommendations for them so that they only invest their time in learning about these recommended movies.
