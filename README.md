@@ -18,3 +18,4 @@ and then using item-to-item cosine similarity, rating of new user for each movie
 ● Movie.java - Used to store the details of each movie and to create objects for
 each movie.<br />
 
+![movierecommendersystem_classdiagram - page 1 1](https://user-images.githubusercontent.com/34748358/40587987-cfc2074e-61a4-11e8-9ac5-d32b989b68a3.png)
