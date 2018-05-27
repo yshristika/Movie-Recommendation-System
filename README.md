@@ -5,6 +5,21 @@ In this application, there is a large collection of movies from all popular genr
 
 ### Implementation details:
 
+#### Movie Recommender System preliminary technique -  Item Based collaborative filtering
+1. Get data from IMDB/Movie Lens or similar sources (must have ratings given by users to movies)<br />
+2. Parse data to obtain Movie Identifiers and User Identifiers as well as the corresponding rating (at the least)<br />
+3. Construct a matrix of User Id to Movie ID/Movie Name - each cell being a rating, null if no rating exists.<br />
+4. Use the matrix in step 3 to calculate similarity/correlation scores of movies with one another (based on user rating vectors for each movie) - to construct an n x n correlation matrix. Each cell will contain the correlation score between the 2 movies to tell us how similar the ratings are (provided at least one user has rated both movies, if not the cell will contain a null value). <br />
+        4.1 We could improve the results in step 4 by considering only those pairs of movies where we have a certain minimum number of users rating both. This number could be 50,100 or any number that gives us a decent sized non-null matrix ( provided it doesn’t end up being a sparse matrix)<br />
+5. Create a test user and specify a few movies and corresponding ratings. Add this user’s ratings to the data set representation<br />
+6. Get a list of recommended movies, for the test user, based on this vector <br />
+For every movie in the list created in step 5 (i.e. every movie rated) 
+- Get similar movies based on correlation matrix in step 4
+- Scale similarity score by test user’s rating 
+- Add movie and scaled similarity score to the list of recommended movies.<br />
+7. If a movie appears more than once in the recommended list - ( means that it is similar to more than one movies in test user’s ratings vector ) - add up the scaled similarity scores in that case.<br />
+8. Filter out movies that the test user has already watched. <br />
+
 The Movie Recommender System is served as a native Android application. Hence, the back-end and front-end are both pure java.
 
 #### Back end:
